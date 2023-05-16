@@ -6,13 +6,13 @@ function TVShowList(props) {
   function mapAllShows() {
     if (!!props.searchTerm) {
       props.shows.map((s) => {
-        if (s.name.toLowerCase().includes(props.searchTerm)) {
-          <TVShow show={s} key={s.id} selectShow={props.selectShow} />;
+        if (s.name.toLowerCase().includes(props.searchTerm.toLowerCase())) {
+          <TVShow show={s} key={s.id} selectShow={props.selectShow} id = {s.id}/>;
         }
       });
     }
     return props.shows.map((s) => (
-      <TVShow show={s} key={s.id} selectShow={props.selectShow} />
+      <TVShow show={s} key={s.id} selectShow={props.selectShow} id = {s.id}/>
     ));
   }
 

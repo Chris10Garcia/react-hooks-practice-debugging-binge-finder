@@ -20,7 +20,7 @@ function SelectedShowContainer(props) {
 
   function mapEpisodes(e) {
     return props.episodes.map((e) => {
-      if (e.season === selectedSeason) {
+      if (e.season == selectedSeason) {
         return <Episode eachEpisode={e} key={e.id} />;
       }
     });
@@ -48,8 +48,6 @@ function SelectedShowContainer(props) {
   );
 }
 
-export default SelectedShowContainer
-
 Array.prototype.unique = function () {
   const arr = [];
   for (let i = 0; i < this.length; i++) {
@@ -59,3 +57,5 @@ Array.prototype.unique = function () {
   }
   return arr;
 };
+
+export default SelectedShowContainer

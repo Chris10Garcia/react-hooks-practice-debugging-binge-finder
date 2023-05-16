@@ -13,7 +13,7 @@ function App() {
   const [filterByRating, setFilterByRating] = useState("");
 
   useEffect(() => {
-    Adapter.getShows().then((shows) => setShows(shows));
+    Adapter.getShows().then((shows) => setShows(shows)).catch(error => console.log(error));
   }, []);
 
   useEffect(() => {
@@ -38,6 +38,7 @@ function App() {
   }
 
   let displayShows = shows;
+  
   if (filterByRating) {
     displayShows = displayShows.filter((s) => {
       return s.rating.average >= filterByRating;
@@ -56,7 +57,7 @@ function App() {
           {!!selectedShow ? (
             <SelectedShowContainer
               selectedShow={selectedShow}
-              allEpisodes={episodes}
+              episodes={episodes}
             />
           ) : (
             <div />
