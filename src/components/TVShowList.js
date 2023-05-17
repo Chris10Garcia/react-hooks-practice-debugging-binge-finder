@@ -13,8 +13,6 @@ function TVShowList(props) {
     //   }
     // })
 
-
-
     if (!!props.searchTerm) {
       return props.shows.map( (s) => {
         if (s.name.toLowerCase().includes(props.searchTerm)) { return (<TVShow show={s} key={s.id} selectShow={props.selectShow} id = {s.id}/> )}
