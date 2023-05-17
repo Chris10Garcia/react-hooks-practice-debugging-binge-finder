@@ -7,7 +7,7 @@ function SelectedShowContainer(props) {
   function mapSeasons() {
     if (!!props.episodes) {
       let seasons = props.episodes.map((e) => e.season).unique();
-
+      
       return seasons.map((s) => {
         return (
           <option value={s} key={s}>

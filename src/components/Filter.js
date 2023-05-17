@@ -8,7 +8,7 @@ function Filter(props) {
         placeholder="Filter by average rating"
         onChange={props.handleFilter}
       >
-        <option>No Filter</option>
+        <option value="0">No Filter</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
